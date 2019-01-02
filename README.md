@@ -27,7 +27,7 @@ This plugin inject cordova.js and cordova_plugins.js either from local or remote
 
 ## Installation
 
-    cordova plugin add cordova-plugin-jsinjection
+    cordova plugin add https://github.com/amirhmoradi/cordova-plugin-jsinjection
 
 ### Supported Platforms
 

@@ -22,7 +22,7 @@
     xmlns:rim="http://www.blackberry.com/ns/widgets"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova-plugin-jsinjection"
-    version="1.0.0">
+    version="1.1.0">
     <name>JsInjection</name>
     <description>Cordova Js Injection</description>
     <license>Apache 2.0</license>
@@ -41,7 +41,7 @@
     <asset src="www/jsinjection-bridge.js" target="jsinjection-bridge.js" />
 
     <engines>
-        <!-- <engine name="cordova-ios" version="<=5.0.0" /> -->
+        <engine name="cordova-ios" version="<=5.0.0" />
         <engine name="cordova-android" version="<=8.0.0" />
     </engines>
 
