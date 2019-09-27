@@ -332,7 +332,38 @@ static NSString* const DEFAULT_CORDOVA_BASE_URL = @"";
         }
     }
 }
+// Handles notifications from the webview delegate whenever a page load fails.
+- (void)didWebViewFailLoadWithError:(NSNotification*)notification
+{
+ /*   NSError* error = [notification object];
 
+    if ([[notification name] isEqualToString:kCDVHostedWebAppWebViewDidFailLoadWithError]) {
+        NSLog (@"Received a navigation failure notification. error: %@", [error description]);
+        if ([error code] == NSURLErrorTimedOut ||
+            [error code] == NSURLErrorUnsupportedURL ||
+            [error code] == NSURLErrorCannotFindHost ||
+            [error code] == NSURLErrorCannotConnectToHost ||
+            [error code] == NSURLErrorDNSLookupFailed ||
+            [error code] == NSURLErrorNotConnectedToInternet ||
+            [error code] == NSURLErrorNetworkConnectionLost) {
+
+            self.failedURL = [NSURL URLWithString:[error.userInfo objectForKey:@"NSErrorFailingURLStringKey"]];
+
+            if (self.enableOfflineSupport) {
+                [self.offlineView setHidden:NO];
+            }
+        }
+    }
+  */
+    UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Load Error"
+                                                      message:@"There was an issue contacting the server."
+                                                     delegate:self
+                                            cancelButtonTitle:@"Close"
+                                            otherButtonTitles: nil];
+     [alert addButtonWithTitle:@"Try again?"];
+     [alert show];
+
+}
 #ifndef __CORDOVA_4_0_0
 - (BOOL)shouldOverrideLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType
 {
